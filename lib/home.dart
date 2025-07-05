@@ -4,6 +4,7 @@ import 'package:my_app/sections/roomSections.dart';
 import 'package:my_app/sections/statusSection.dart';
 import 'package:my_app/sections/storySection.dart';
 import 'package:my_app/widgets/circularButton.dart';
+import 'package:my_app/widgets/postCard.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -53,6 +54,11 @@ class Home extends StatelessWidget {
             Divider(thickness: 10, color: Colors.grey[300]),
             StorySection(),
             Divider(thickness: 10, color: Colors.grey[300]),
+            PostCard(
+              name: "Rashid",
+              avatar: 'assets/img/person_2.jpg',
+              time: '5h',
+            ),
           ],
         ),
       ),
