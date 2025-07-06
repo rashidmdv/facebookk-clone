@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 
 class HeaderButtonSection extends StatelessWidget {
-  const HeaderButtonSection({super.key});
 
-  Widget headerButton({
-    required String btnText,
-    required IconData icon,
-    required void Function() btnAction,
-    required Color color,
-  }) {
-    return TextButton.icon(
-      onPressed: btnAction,
-      icon: Icon(icon, color: color),
-      label: Text(btnText),
-    );
-  }
+  final Widget buttonOne;
+  final Widget buttonTwo;
+  final Widget buttonThree;
+
+  const HeaderButtonSection({
+    super.key,
+    required this.buttonOne,
+    required this.buttonTwo,
+    required this.buttonThree,
+  });
+
+
 
 
 
@@ -25,26 +24,11 @@ class HeaderButtonSection extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          headerButton(
-            btnText: "Live",
-            icon: Icons.video_call,
-            btnAction: () {print("live clicked");},
-            color: Colors.red,
-          ),
+          buttonOne,
           VerticalDivider(thickness: 1, color: Colors.grey[300]),
-          headerButton(
-            btnText: "Photos",
-            icon: Icons.photo,
-            btnAction: () {print("Photos clicked");},
-            color: Colors.green,
-          ),
+          buttonTwo,
           VerticalDivider(thickness: 1, color: Colors.grey[300]),
-          headerButton(
-            btnText: "Room",
-            icon: Icons.room,
-            btnAction: () {print("room clicked");},
-            color: Colors.purple,
-          ),
+          buttonThree,
         ],
       ),
     );

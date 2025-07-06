@@ -4,12 +4,16 @@ class Avatar extends StatelessWidget {
   final String displayImage;
   final bool displayStatus;
   final bool displayBorder;
+  final double avatarWidth;
+  final double avatarHeight;
 
   const Avatar({
     super.key,
     required this.displayImage,
     required this.displayStatus,
     this.displayBorder = false,
+    this.avatarWidth = 50,
+    this.avatarHeight = 50,
   });
 
   @override
@@ -25,7 +29,7 @@ class Avatar extends StatelessWidget {
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(50),
-            child: Image.asset(displayImage, width: 50, height: 50),
+            child: Image.asset(displayImage, width: avatarWidth, height: avatarHeight),
           ),
         ),
         displayStatus
